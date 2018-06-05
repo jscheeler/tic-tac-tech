@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$ts-app-primary: mat-palette($mat-red);
+$ts-app-accent:  mat-palette($mat-blue-grey);
+
+$ts-app-warn:  mat-palette($mat-red);
+
+$ts-app-theme: mat-light-theme($ts-app-primary, $ts-app-accent, $ts-app-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($ts-app-theme);
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
