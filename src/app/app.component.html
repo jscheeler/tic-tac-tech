@@ -11,19 +11,24 @@
     <button mat-raised-button color="accent" (click)="setActiveTeam('x')">X</button>
   </div>
   <div class="board">
-    <div class="grid">
-      <div class="grid-tile" *ngFor="let square of squares; let i = index;" [class.x]="square.won === 'x'" [class.o]="square.won === 'o'" (click)="setSquare(i)">
+    <mat-grid-list cols="3" rowHeight="1:1" gutterSize="5px">
+      <mat-grid-tile *ngFor="let square of squares; let i = index;" [class.x]="square.won === 'x'" [class.o]="square.won === 'o'" (click)="setSquare(i)">
         <div class="celebrity">
           <div class="celebrity-img">
             <img src="{{square.image}}" />
           </div>
-          <h4>{{square.celebrity}}</h4>
+          <h4 class="celebrity-name">{{square.celebrity}}</h4>
         </div>
         <div *ngIf="square.won" class="tile-won tile-won_{{square.won}}">
           <span>{{square.won}}</span>
         </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <!-- <div class="grid">
+      <div class="grid-tile" *ngFor="let square of squares; let i = index;" [class.x]="square.won === 'x'" [class.o]="square.won === 'o'" (click)="setSquare(i)">
+
       </div>
-    </div>
+    </div> -->
   </div>
   <div class="team-container">
     <h3>Team Name</h3>

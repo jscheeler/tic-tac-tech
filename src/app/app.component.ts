@@ -61,8 +61,6 @@ export class AppComponent {
   constructor() {}
 
   setSquare(i) {
-    console.log(i);
-    console.log(this.squares);
     this.squares[i].won = this.activeTeam;
   }
 
