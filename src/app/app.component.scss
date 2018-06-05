@@ -45,6 +45,7 @@ mat-grid-list {
   &-tile {
     border-right: 2px solid #000;
     border-bottom: 2px solid #000;
+    position: relative;
 
     & img {
       object-fit: cover;
@@ -69,6 +70,50 @@ mat-grid-list {
 
     & img {
       object-fit: cover;
+    }
+  }
+}
+
+.tile-won {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.5);
+
+  &_x {
+    &::before, &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 4px;
+      height: 100%;
+      background: #000;
+    }
+
+    &::after {
+      transform: rotate(45deg);
+    }
+    &::before {
+      transform: rotate(-45deg);
+    }
+  }
+
+  &_o {
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      border: 4px solid #000;
+      width: 85%;
+      height: 85%;
+      border-radius: 100%;
+      transform: translateX(-50%);
     }
   }
 }

@@ -19,6 +19,9 @@
           </div>
           <h4>{{square.celebrity}}</h4>
         </div>
+        <div *ngIf="square.won" class="tile-won tile-won_{{square.won}}">
+          <span>{{square.won}}</span>
+        </div>
       </div>
     </div>
   </div>
