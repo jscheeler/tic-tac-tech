@@ -8,86 +8,22 @@
 <div class="field">
   <div class="team-container">
     <h3>Team Name</h3>
-    <button mat-raised-button color="accent">X</button>
+    <button mat-raised-button color="accent" (click)="setActiveTeam('x')">X</button>
   </div>
   <div class="board">
     <div class="grid">
-      <div class="grid-tile">
+      <div class="grid-tile" *ngFor="let square of squares; let i = index;" [class.x]="square.won === 'x'" [class.o]="square.won === 'o'" (click)="setSquare(i)">
         <div class="celebrity">
           <div class="celebrity-img">
-            <img src="/assets/carlos.jpg" />
+            <img src="{{square.image}}" />
           </div>
-          <h4>Carlos</h4>
-        </div>
-      </div>
-      <div class="grid-tile">
-        <div class="celebrity">
-          <div class="celebrity-img">
-            <img src="/assets/ivan.jpg" />
-          </div>
-          <h4>Ivan</h4>
-        </div>
-      </div>
-      <div class="grid-tile">
-        <div class="celebrity">
-          <div class="celebrity-img">
-            <img src="/assets/ben.jpg" />
-          </div>
-          <h4>Ben</h4>
-        </div>
-      </div>
-      <div class="grid-tile">
-        <div class="celebrity">
-          <div class="celebrity-img">
-            <img src="/assets/warren.jpg" />
-          </div>
-          <h4>Warren</h4>
-        </div>
-      </div>
-      <div class="grid-tile">
-        <div class="celebrity">
-          <div class="celebrity-img">
-            <img src="/assets/kristy-travis.jpg" />
-          </div>
-          <h4>Travis / Kristy</h4>
-        </div>
-      </div>
-      <div class="grid-tile">
-        <div class="celebrity">
-          <div class="celebrity-img">
-            <img src="/assets/christophe.png" />
-          </div>
-          <h4>Christophe</h4>
-        </div>
-      </div>
-      <div class="grid-tile">
-        <div class="celebrity">
-          <div class="celebrity-img">
-            <img src="/assets/david.jpg" />
-          </div>
-          <h4>Dave</h4>
-        </div>
-      </div>
-      <div class="grid-tile">
-        <div class="celebrity">
-          <div class="celebrity-img">
-            <img src="/assets/bill.jpg" />
-          </div>
-          <h4>Bill</h4>
-        </div>
-      </div>
-      <div class="grid-tile">
-        <div class="celebrity">
-          <div class="celebrity-img">
-            <img src="/assets/pat.jpg" />
-          </div>
-          <h4>Pat</h4>
+          <h4>{{square.celebrity}}</h4>
         </div>
       </div>
     </div>
   </div>
   <div class="team-container">
     <h3>Team Name</h3>
-    <button mat-raised-button color="accent">O</button>
+    <button mat-raised-button color="accent" (click)="setActiveTeam('o')">O</button>
   </div>
 </div>
