@@ -96,9 +96,11 @@ export class AppComponent {
 
   createTeams(teams) {
     this.teams = [];
-    teams.forEach((teamName) => {
-      this.teams.push(new Team(teamName));
-    });
+    if (teams) {
+      teams.forEach((teamName) => {
+        this.teams.push(new Team(teamName));
+      });
+    }
   }
 
   setSquare(i) {

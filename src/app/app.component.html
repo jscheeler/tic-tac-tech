@@ -8,7 +8,8 @@
         {{team.name}} <span *ngIf="team.matches > 0">({{team.matches}})</span>
       </span>
     </span>
-    <button mat-raised-button color="primary" (click)="newMatch()" class="example-icon">New Match</button>
+    <button mat-raised-button color="primary" (click)="addTeams()" *ngIf="teams.length == 0" >Add Teams</button>
+    <button mat-raised-button color="primary" (click)="newMatch()">New Match</button>
   </mat-toolbar-row>
 </mat-toolbar>
 <div class="field">
