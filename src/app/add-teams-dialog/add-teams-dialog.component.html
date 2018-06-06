@@ -1,0 +1,29 @@
+<h1 mat-dialog-title>Create Your Teams</h1>
+<mat-dialog-content>
+  <form novalidate>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Team 1" [(ngModel)]="teams1" name="team1">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Team 2" [(ngModel)]="teams2" name="team2">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Team 3" [(ngModel)]="teams3" name="team3">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Team 4" [(ngModel)]="teams4" name="team4">
+      </mat-form-field>
+    </div>
+  </form>
+
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)="combinedAndClose()">Create Teams</button>
+</mat-dialog-actions>

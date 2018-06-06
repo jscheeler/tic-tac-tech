@@ -3,6 +3,13 @@
   flex: 1 1 auto;
 }
 
+.teams {
+  text-align: center;
+  & .team-list-item {
+    padding-left: 20px
+  }
+}
+
 .field {
   display: grid;
   grid-template-columns: 20vw 60vw 20vw;
@@ -122,4 +129,8 @@ mat-grid-list {
       transform: translate(-50%, -50%);
     }
   }
+}
+
+button + button {
+  margin-left: 20px;
 }

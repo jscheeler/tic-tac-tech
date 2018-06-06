@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Which teams will compete?</h1>
+<mat-dialog-content>
+  <mat-selection-list #teamList (selectionChange)="updateSelected($event)">
+    <mat-list-option checkboxPosition="before" *ngFor="let team of data.teams; let i = index" [value]="i">
+      {{team.name}}
+    </mat-list-option>
+  </mat-selection-list>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button color="primary" [mat-dialog-close]="this.selection">Start Match</button>
+</mat-dialog-actions>
