@@ -12,7 +12,7 @@ import { SecretSquareDialogComponent } from './secret-square-dialog/secret-squar
 })
 export class AppComponent {
   title = 'app';
-  teams: Team[];
+  teams: Team[] = [];
   games = 1;
   currentTeams: number[] = [];
   activeTeam: string;
