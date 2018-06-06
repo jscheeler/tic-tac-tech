@@ -12,12 +12,7 @@ import { SecretSquareDialogComponent } from './secret-square-dialog/secret-squar
 })
 export class AppComponent {
   title = 'app';
-  teams = [
-    new Team('Team 1'),
-    new Team('Team 2'),
-    new Team('Team 3'),
-    new Team('Team 4')
-  ];
+  teams: Team[];
   games = 1;
   currentTeams: number[] = [];
   activeTeam: string;
@@ -34,55 +29,55 @@ export class AppComponent {
   squares = [
     {
       celebrity: 'Carlos',
-      image: '/assets/carlos.jpg',
+      image: 'assets/carlos.jpg',
       won: null,
       secret: 3
     },
     {
       celebrity: 'Ivan',
-      image: '/assets/ivan.jpg',
+      image: 'assets/ivan.jpg',
       won: null,
       secret: 7
     },
     {
       celebrity: 'Ben',
-      image: '/assets/ben.jpg',
+      image: 'assets/ben.jpg',
       won: null,
       secret: 4
     },
     {
       celebrity: 'Warren',
-      image: '/assets/warren.jpg',
+      image: 'assets/warren.jpg',
       won: null,
       secret: 1
     },
     {
       celebrity: 'Travis / Kristy',
-      image: '/assets/kristy-travis.jpg',
+      image: 'assets/kristy-travis.jpg',
       won: null,
       secret: 9
     },
     {
       celebrity: 'Christophe',
-      image: '/assets/christophe.png',
+      image: 'assets/christophe.png',
       won: null,
       secret: 5
     },
     {
       celebrity: 'Dave',
-      image: '/assets/david.jpg',
+      image: 'assets/david.jpg',
       won: null,
       secret: 8
     },
     {
       celebrity: 'Bill',
-      image: '/assets/bill.jpg',
+      image: 'assets/bill.jpg',
       won: null,
       secret: 6
     },
     {
       celebrity: 'Pat',
-      image: '/assets/pat.jpg',
+      image: 'assets/pat.jpg',
       won: null,
       secret: 2
     }
@@ -90,13 +85,13 @@ export class AppComponent {
 
   constructor(private matDialog: MatDialog) {
     // ask for team names
-    // const addDialog = matDialog.open(AddTeamsDialogComponent, {
-    //   width: '25%'
-    // });
+    const addDialog = matDialog.open(AddTeamsDialogComponent, {
+      width: '25%'
+    });
 
-    // addDialog.afterClosed().subscribe((teams) => {
-    //   this.createTeams(teams);
-    // });
+    addDialog.afterClosed().subscribe((teams) => {
+      this.createTeams(teams);
+    });
   }
 
   createTeams(teams) {
