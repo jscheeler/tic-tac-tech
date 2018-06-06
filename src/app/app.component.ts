@@ -95,7 +95,7 @@ export class AppComponent {
   }
 
   createTeams(teams) {
-    teams = [];
+    this.teams = [];
     teams.forEach((teamName) => {
       this.teams.push(new Team(teamName));
     });
