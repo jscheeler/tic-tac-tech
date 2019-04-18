@@ -85,7 +85,12 @@ export class AppComponent {
 
   constructor(private matDialog: MatDialog) {
     // ask for team names
-    const addDialog = matDialog.open(AddTeamsDialogComponent, {
+    // this.addTeams();
+
+  }
+
+  addTeams() {
+    const addDialog = this.matDialog.open(AddTeamsDialogComponent, {
       width: '25%'
     });
 

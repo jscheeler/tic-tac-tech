@@ -22,8 +22,12 @@
 
 .team-container {
   align-self: center;
-  justify-self: center;
+  justify-self: flex-end;
   text-align: center;
+
+  &:last-child {
+    justify-self: flex-start;
+  }
 }
 
 mat-grid-list {
@@ -67,10 +71,11 @@ mat-grid-list {
     position: absolute;
     width: 100%;
     bottom: 0;
-    padding: 1em 0;
+    padding: 0.5em 0;
     background: rgba(0, 0, 0, 0.5);
     margin: 0;
     color: #fff;
+    text-transform: uppercase;
   }
 
 }
@@ -104,7 +109,7 @@ mat-grid-list {
       left: 50%;
       width: 10px;
       height: 85%;
-      background: #000;
+      background: #F44336;
     }
 
     &::after {

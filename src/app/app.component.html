@@ -15,8 +15,8 @@
 <div class="field">
   <div class="team-container">
     <div *ngIf="currentTeams.length > 0">
-      <h3 class="team_name">{{teams[currentTeams[0]].name}}</h3>
-      <p>Won: {{teams[currentTeams[0]].won}}</p>
+      <h3 class="team_name mat-display-1">{{teams[currentTeams[0]].name}}</h3>
+      <p class="mat-h2">Won: {{teams[currentTeams[0]].won}}</p>
       <p><button mat-raised-button color="accent" (click)="setActiveTeam('x')">Turn: X</button></p>
       <p><button mat-raised-button color="primary" (click)="teamWon(currentTeams[0])">Winner</button></p>
     </div>
@@ -28,7 +28,7 @@
           <div class="celebrity-img">
             <img src="{{square.image}}" />
           </div>
-          <h4 class="celebrity-name">{{square.celebrity}}</h4>
+          <h4 class="celebrity-name mat-h1">{{square.celebrity}}</h4>
         </div>
         <div *ngIf="square.won" class="tile-won tile-won_{{square.won}}">
           <span>{{square.won}}</span>
@@ -43,8 +43,8 @@
   </div>
   <div class="team-container">
     <div *ngIf="currentTeams.length > 0">
-      <h3 class="team_name">{{teams[currentTeams[1]].name}}</h3>
-      <p>Won: {{teams[currentTeams[1]].won}}</p>
+      <h3 class="team_name mat-display-1">{{teams[currentTeams[1]].name}}</h3>
+      <p class="mat-h2">Won: {{teams[currentTeams[1]].won}}</p>
       <p><button mat-raised-button color="accent" (click)="setActiveTeam('o')">Turn: O</button></p>
       <p><button mat-raised-button color="primary" (click)="teamWon(currentTeams[1])">Winner</button></p>
     </div>
